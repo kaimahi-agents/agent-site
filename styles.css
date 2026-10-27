@@ -141,9 +141,10 @@ h2 { font-size: 36px; font-weight: 600; letter-spacing: -0.6px; }
 h3 { font-size: 21px; font-weight: 600; }
 .feature > p:last-child { font-size: 16px; line-height: 1.6; color: var(--secondary); }
 
-.install { display: flex; flex-direction: column; gap: 28px; }
-.install-intro { display: flex; flex-direction: column; gap: 12px; }
-.install-intro p { font-size: 17px; line-height: 1.6; color: var(--secondary); max-width: 680px; }
+.roadmap-card { border-style: dashed; background: transparent; }
+.install, .whats-next { display: flex; flex-direction: column; gap: 28px; }
+.install-intro, .next-intro { display: flex; flex-direction: column; gap: 12px; }
+.install-intro p, .next-intro p { font-size: 17px; line-height: 1.6; color: var(--secondary); max-width: 680px; }
 .install-steps { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
 .install-steps p { font-size: 15px; color: var(--muted); }
 pre {

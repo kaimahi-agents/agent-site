@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Unit tests for your agent's prompt. Write a Copilot custom agent, add tests, and see what broke and why with kmx.">
+  <meta name="description" content="Add a few examples of what a good answer looks like and press Enter. kmx runs them in the Copilot app, shows what broke and why, and lets you compare models and replay tool calls. Change the prompt, press Enter again.">
   <meta name="theme-color" content="#0b0f14">
-  <title>kmx — Unit tests for your agent's prompt</title>
+  <title>kmx — Know your agent works before you share it.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -27,8 +27,8 @@
       <section id="top" class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
           <p class="eyebrow">For Copilot custom agents</p>
-          <h1 id="hero-title">Unit tests for your agent's prompt.</h1>
-          <p class="hero-description">Write the prompt in the Copilot app, add a few examples of what a good answer must say, and press Enter. kmx shows what broke and why. Change a line, press Enter again.</p>
+          <h1 id="hero-title">Know your agent works before you share it.</h1>
+          <p class="hero-description">Add a few examples of what a good answer looks like and press Enter. kmx runs them in the Copilot app, shows what broke and why, and lets you compare models and replay tool calls. Change the prompt, press Enter again.</p>
           <div class="hero-actions">
             <a class="button primary" href="#install">Install in three commands</a>
             <a class="button secondary" href="#how">See how it works</a>
@@ -63,6 +63,30 @@
           <img src="images/compare.png" alt="A release-notes prompt and four tests comparing Terra and Haiku: both pass three tests, while only Haiku fails the fix-note test" width="1237" height="971" loading="lazy">
           <figcaption>Compare: one row per test, one result per model.</figcaption>
         </figure>
+      </section>
+
+      <section id="next" class="whats-next section" aria-labelledby="next-title">
+        <div class="next-intro">
+          <h2 id="next-title">What's next</h2>
+          <p>In progress, not in a release yet.</p>
+        </div>
+        <div class="features">
+          <div class="feature roadmap-card">
+            <p class="feature-number">IN PROGRESS</p>
+            <h3>The same file in your terminal and CI</h3>
+            <p>Your agent stays a GitHub .agent.md file with its tests beside it. Run them from the terminal or in a pull request; a failure reads the same as in the canvas.</p>
+          </div>
+          <div class="feature roadmap-card">
+            <p class="feature-number">PLANNED</p>
+            <h3>Ship the agent you tested</h3>
+            <p>Package the exact version that passed and deploy it to Kubernetes or AKS.</p>
+          </div>
+          <div class="feature roadmap-card">
+            <p class="feature-number">PLANNED</p>
+            <h3>Results that stay</h3>
+            <p>Test results you can come back to after closing the canvas, and share with your team.</p>
+          </div>
+        </div>
       </section>
 
       <section id="install" class="install section" aria-labelledby="install-title">
