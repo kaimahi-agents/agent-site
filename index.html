@@ -56,7 +56,7 @@
           <div class="feature">
             <p class="feature-number">03</p>
             <h3>Tool calls recorded once</h3>
-            <p>The first run calls the real tool and saves the result. Later runs replay it, so tests stay fast and repeatable.</p>
+            <p>Choose Recorded for a test's tool to save its first result and replay it on later runs. Live tools run every time.</p>
           </div>
         </div>
         <figure>
@@ -68,14 +68,18 @@
       <section id="install" class="install section" aria-labelledby="install-title">
         <div class="install-intro">
           <h2 id="install-title">Install</h2>
-          <p>You need the Copilot app and CLI and a signed-in Copilot account. On Windows, kmx runs in WSL.</p>
+          <p>You need the Copilot app and CLI and a signed-in Copilot account. On Windows, kmx runs in WSL. Sign in separately for <a href="https://kaimahi.dev/docs/copilot-app#check-model-access">kmx model access</a> in WSL or your Mac terminal.</p>
         </div>
         <div class="install-steps">
           <p>1. In WSL (or a macOS terminal), install kmx</p>
-          <pre><code>curl -fsSL https://raw.githubusercontent.com/kaimahi-agents/kaimahi/[VERSION]/install.sh | sudo sh -s -- --version=[VERSION]</code></pre>
+          <pre><code>curl -fsSL https://raw.githubusercontent.com/kaimahi-agents/kaimahi/[VERSION]/install.sh | sudo sh -s -- --version=[VERSION] --bin-dir=/usr/local/bin</code></pre>
           <p>2. Add the plugin to Copilot</p>
+          <p>Windows terminal (not WSL)</p>
           <pre><code>copilot plugin marketplace add kaimahi-agents/kaimahi
 copilot plugin install kmx-agent-builder@kmx-plugins</code></pre>
+          <p>macOS terminal</p>
+          <pre><code>copilot plugin marketplace add kaimahi-agents/kaimahi
+copilot plugin install kmx-agent-builder-path@kmx-plugins</code></pre>
           <p>3. In the Copilot app, ask for an agent</p>
           <pre class="agent-request"><code>Create an agent that turns merged pull request titles into release notes.</code></pre>
         </div>

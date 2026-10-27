@@ -76,6 +76,29 @@ class SiteTests(unittest.TestCase):
         public_text = self.source + (ROOT / 'styles.css').read_text()
         self.assertIsNone(re.search(r'(?i)\bW\d{3}\b|/home/|C:\\', public_text))
 
+    def test_installer_path_and_model_access(self):
+        self.assertIn('--version=[VERSION] --bin-dir=/usr/local/bin', self.source)
+        self.assertIn('https://kaimahi.dev/docs/copilot-app#check-model-access',
+                      [a['href'] for a in self.doc.attrs('a')])
+        self.assertIn('Sign in separately for', ' '.join(self.doc.text))
+
+    def test_platform_plugin_instructions(self):
+        snippets = ['Windows terminal (not WSL)',
+                    'copilot plugin install kmx-agent-builder@kmx-plugins',
+                    'macOS terminal</p>',
+                    'copilot plugin install kmx-agent-builder-path@kmx-plugins']
+        for snippet in snippets:
+            self.assertIn(snippet, self.source)
+        positions = [self.source.index(snippet) for snippet in snippets]
+        self.assertEqual(positions, sorted(positions))
+        self.assertEqual(self.source.count('copilot plugin marketplace add '), 2)
+
+    def test_recorded_tools_are_an_explicit_choice(self):
+        text = ' '.join(self.doc.text)
+        self.assertIn("Choose Recorded for a test's tool", text)
+        self.assertIn('Live tools run every time.', text)
+        self.assertNotIn('The first run calls the real tool and saves the result.', text)
+
     def test_commands_wrap_without_hiding_text(self):
         css = (ROOT / 'styles.css').read_text()
         match = re.search(r'\npre \{([^}]+)\}', css)
