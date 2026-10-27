@@ -22,8 +22,8 @@ python3 -m unittest discover -s tests -v
 GitHub Pages serves the root of `main`. `.nojekyll` disables Jekyll processing;
 `CNAME` names `agent.kaimahi.dev`. Deployment settings and DNS are maintainer-owned.
 
-The visible `[VERSION]` placeholder is intentionally unreleased. The terminal/CI
-section is omitted until that workflow ships.
+The visible `[VERSION]` placeholder is intentionally unreleased. The “What's
+next” cards mark future work as in progress or planned, not released features.
 
 [Contributing](CONTRIBUTING.md) · [Code of conduct](CODE_OF_CONDUCT.md) ·
 [Security reporting](SECURITY.md) · [MIT license](LICENSE)
