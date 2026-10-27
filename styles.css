@@ -156,7 +156,8 @@ pre {
   font-size: 14px;
   color: #c9d1d9;
   overflow-x: auto;
-  white-space: pre;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
 code { font: inherit; }
 .agent-request { white-space: pre-wrap; overflow-wrap: anywhere; }

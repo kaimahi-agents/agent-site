@@ -76,6 +76,14 @@ class SiteTests(unittest.TestCase):
         public_text = self.source + (ROOT / 'styles.css').read_text()
         self.assertIsNone(re.search(r'(?i)\bW\d{3}\b|/home/|C:\\', public_text))
 
+    def test_commands_wrap_without_hiding_text(self):
+        css = (ROOT / 'styles.css').read_text()
+        match = re.search(r'\npre \{([^}]+)\}', css)
+        assert match is not None, 'Expected a pre rule for command blocks'
+        pre_rule = match.group(1)
+        self.assertIn('white-space: pre-wrap;', pre_rule)
+        self.assertIn('overflow-wrap: anywhere;', pre_rule)
+
     def test_css_and_pages_contract(self):
         stylesheets = [a['href'] for a in self.doc.attrs('link')
                        if a.get('rel') == 'stylesheet']
