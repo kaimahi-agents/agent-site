@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Unit tests for your agent's prompt. Write a Copilot custom agent, add tests, and see what broke and why with kmx.">
+  <meta name="theme-color" content="#0b0f14">
+  <title>kmx — Unit tests for your agent's prompt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+    <nav aria-label="Main navigation">
+      <a class="wordmark" href="#top">kmx</a>
+      <div class="nav-links">
+        <a href="#how">How it works</a>
+        <a href="#install">Install</a>
+        <a href="https://github.com/kaimahi-agents/kaimahi">GitHub</a>
+      </div>
+    </nav>
+
+    <main id="main">
+      <section id="top" class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">For Copilot custom agents</p>
+          <h1 id="hero-title">Unit tests for your agent's prompt.</h1>
+          <p class="hero-description">Write the prompt in the Copilot app, add a few examples of what a good answer must say, and press Enter. kmx shows what broke and why. Change a line, press Enter again.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#install">Install in three commands</a>
+            <a class="button secondary" href="#how">See how it works</a>
+          </div>
+        </div>
+        <figure class="hero-image">
+          <img src="images/failing.png" alt="A release-notes agent's prompt and three tests: two pass, and one fails with the missing release-note text shown" width="1487" height="1054" fetchpriority="high">
+          <figcaption>A failing test says what the answer was missing.</figcaption>
+        </figure>
+      </section>
+
+      <section id="how" class="how section" aria-labelledby="how-title">
+        <h2 id="how-title">The loop, inside the app you already write in</h2>
+        <div class="features">
+          <div class="feature">
+            <p class="feature-number">01</p>
+            <h3>Enter reruns every test</h3>
+            <p>Edit the prompt and press Enter. Results come back in seconds, each with the reason it passed or failed.</p>
+          </div>
+          <div class="feature">
+            <p class="feature-number">02</p>
+            <h3>Two models, side by side</h3>
+            <p>Run the same tests on a second model and see where they differ before you switch.</p>
+          </div>
+          <div class="feature">
+            <p class="feature-number">03</p>
+            <h3>Tool calls recorded once</h3>
+            <p>The first run calls the real tool and saves the result. Later runs replay it, so tests stay fast and repeatable.</p>
+          </div>
+        </div>
+        <figure>
+          <img src="images/compare.png" alt="A release-notes prompt and four tests comparing Terra and Haiku: both pass three tests, while only Haiku fails the fix-note test" width="1237" height="971" loading="lazy">
+          <figcaption>Compare: one row per test, one result per model.</figcaption>
+        </figure>
+      </section>
+
+      <section id="install" class="install section" aria-labelledby="install-title">
+        <div class="install-intro">
+          <h2 id="install-title">Install</h2>
+          <p>You need the Copilot app and CLI and a signed-in Copilot account. On Windows, kmx runs in WSL.</p>
+        </div>
+        <div class="install-steps">
+          <p>1. In WSL (or a macOS terminal), install kmx</p>
+          <pre><code>curl -fsSL https://raw.githubusercontent.com/kaimahi-agents/kaimahi/[VERSION]/install.sh | sudo sh -s -- --version=[VERSION]</code></pre>
+          <p>2. Add the plugin to Copilot</p>
+          <pre><code>copilot plugin marketplace add kaimahi-agents/kaimahi
+copilot plugin install kmx-agent-builder@kmx-plugins</code></pre>
+          <p>3. In the Copilot app, ask for an agent</p>
+          <pre class="agent-request"><code>Create an agent that turns merged pull request titles into release notes.</code></pre>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>kmx is open source on GitHub.</span>
+      <a class="footer-link" href="https://kaimahi.dev/docs/suite-workspace">Deploying agents to Kubernetes →</a>
+    </footer>
+  </div>
+</body>
+</html>
